@@ -62,6 +62,8 @@
         <module>hystrix</module>
         <module>ribbon</module>
         <module>feng</module>
+        <module>consumer</module>
+        <module>provider</module>
     </modules>
 
     <build>
