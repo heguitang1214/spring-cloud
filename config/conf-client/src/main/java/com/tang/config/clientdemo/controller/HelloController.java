@@ -16,6 +16,6 @@ public class HelloController {
 
     @GetMapping("/getName")
     public String getName() {
-        return person.getName();
+        return "从config server获取到的配置name为：" + person.getName();
     }
 }
