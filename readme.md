@@ -9,9 +9,11 @@
     > [http://localhost:8761/](http://localhost:8761/)
 * 服务的消费者consumer：
     > order: 8910
+    > http://localhost:8910/order/abc/100
     > http://localhost:8910/order?productName=abc&num=100
 * 服务的提供者provider：
     > product: 8900
+    > http://localhost:8900/updateProduct/abc/100
     > http://localhost:8900/updateProduct?productName=abc&num=100
 * 熔断器Hystrix：9900
     > 

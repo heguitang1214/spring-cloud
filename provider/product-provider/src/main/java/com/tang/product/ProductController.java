@@ -1,6 +1,7 @@
 package com.tang.product;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -21,9 +22,9 @@ public class ProductController {
      * @param num 数量
      * @return 描述
      */
-//    @GetMapping("/updateProduct/{productName}/{num}")
-    @GetMapping("/updateProduct")
-    public String updateProducter(String productName, Integer num) {
+    @GetMapping("/updateProduct/{productName}/{num}")
+//    @GetMapping("/updateProduct")
+    public String updateProducter(@PathVariable("productName") String productName, @PathVariable("num") Integer num) {
         if (productName != null && !productName.isEmpty()) {
             productMap.put(productName, (productMap.get(productName) == null ? 0 : productMap.get(productName)) - num);
             System.out.println("修改库存：productName-" + productName + ", num-" + num);
