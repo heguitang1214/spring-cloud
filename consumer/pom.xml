@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>order-consumer</module>
+        <module>user-consumer</module>
     </modules>
 
 

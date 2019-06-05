@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>product-provider</module>
+        <module>user-provider</module>
     </modules>
 
 

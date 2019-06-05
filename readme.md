@@ -11,12 +11,18 @@
     > order: 8910
     > http://localhost:8910/order/abc/100
     > http://localhost:8910/order?productName=abc&num=100
+    
+    > user: 8930
 * 服务的提供者provider：
     > product: 8900
     > http://localhost:8900/updateProduct/abc/100
     > http://localhost:8900/updateProduct?productName=abc&num=100
+    
+    >user: 8920
+    
 * 熔断器Hystrix：9900
     > 
 
 * 网关zuul：9999
+    > 
 
