@@ -65,6 +65,7 @@
         <module>consumer</module>
         <module>provider</module>
         <module>gateway-zuul</module>
+        <module>feng-order</module>
     </modules>
 
     <build>

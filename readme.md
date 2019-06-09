@@ -13,6 +13,9 @@
     > http://localhost:8910/order?productName=abc&num=100
     
     > user: 8930
+    
+    > feng-order: 8950
+    
 * 服务的提供者provider：
     > product: 8900
     > http://localhost:8900/updateProduct/abc/100
@@ -28,6 +31,8 @@
     > 2.使用注册中心
     > 3.使用注册中心 + 配置中心
 
-
+* Feng
+    > 需要修改服务的消费者，消费者调用对应的接口即可
+    示例：http://localhost:8950/fengOrder/abc/100
 
 
