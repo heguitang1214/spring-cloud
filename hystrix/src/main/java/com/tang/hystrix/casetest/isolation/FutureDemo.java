@@ -7,10 +7,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
- * TODO
- *
- * @author:Five-云析学院
- * @since:2019年05月08日 21:30
+ * 自定义hystrix
  */
 public class FutureDemo {
 
@@ -34,13 +31,14 @@ public class FutureDemo {
             future.get(500, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
             System.out.println("超时了!!!!!!");
-            FutureDemo.fallback();
+            String fallback = FutureDemo.fallback();
+            System.out.println("执行降级逻辑，得到" + fallback);
             e.printStackTrace();
         }
         service.shutdown();
     }
 
-    public static String fallback() {
+    private static String fallback() {
         return "fallback";
     }
 }

@@ -15,11 +15,11 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Hystrix请求合并
+ * HystrixCollapser：请求折叠器
  *
- * @author : Five-云析学院
+ * @author : Tang
  * @since : 2019年04月15日 20:18
  */
-
 public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, String, Integer> {
     private final Integer key;
 
@@ -27,6 +27,11 @@ public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, Str
         this.key = key;
     }
 
+    /**
+     * 获取请求的参数
+     *
+     * @return 请求参数
+     */
     @Override
     public Integer getRequestArgument() {
         return key;
@@ -35,8 +40,8 @@ public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, Str
     /**
      * 创建一个批量请求命令
      *
-     * @param requests
-     * @return
+     * @param requests 批量的请求
+     * @return HystrixCommand<List<String>>
      */
     @Override
     protected HystrixCommand<List<String>> createCommand(Collection<CollapsedRequest<String, Integer>> requests) {
@@ -48,8 +53,8 @@ public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, Str
     /**
      * 将批量请求的结果和对应的请求一一对应
      *
-     * @param batchResponse
-     * @param requests
+     * @param batchResponse 批量的返回
+     * @param requests      批量的请求
      */
     @Override
     protected void mapResponseToRequests(List<String> batchResponse, Collection<CollapsedRequest<String, Integer>> requests) {
@@ -60,6 +65,9 @@ public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, Str
         }
     }
 
+    /**
+     * 封装BatchCommand类
+     */
     private static final class BatchCommand extends HystrixCommand<List<String>> {
 
         private final Collection<CollapsedRequest<String, Integer>> requests;
@@ -86,29 +94,34 @@ public class HystrixCommand4Collapser extends HystrixCollapser<List<String>, Str
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void testHystrix4Collapser() throws Exception {
 
-            HystrixRequestContext context = HystrixRequestContext.initializeContext();
-            try {
-                Future<String> f1 = new HystrixCommand4Collapser(1).queue();
-                Future<String> f2 = new HystrixCommand4Collapser(2).queue();
-                Future<String> f3 = new HystrixCommand4Collapser(3).queue();
-                TimeUnit.MILLISECONDS.sleep(10);
-                Future<String> f4 = new HystrixCommand4Collapser(4).queue();
+    public static void main(String[] args) throws Exception {
+        testHystrix4Collapser();
+    }
 
-                System.out.println(System.currentTimeMillis() + " : " + f1.get());
-                System.out.println(System.currentTimeMillis() + " : " + f2.get());
-                System.out.println(System.currentTimeMillis() + " : " + f3.get());
-                System.out.println(System.currentTimeMillis() + " : " + f4.get());
-                // 下面3条都不在一个批量请求中
-                System.out.println(new HystrixCommand4Collapser(5).execute());
-                System.out.println(new HystrixCommand4Collapser(6).queue().get());
-                System.out.println(new HystrixCommand4Collapser(7).queue().get());
-            } finally {
-                context.shutdown();
-            }
+    //    public static class UnitTest {
+//        @Test
+    private static void testHystrix4Collapser() throws Exception {
+
+        HystrixRequestContext context = HystrixRequestContext.initializeContext();
+        try {
+            Future<String> f1 = new HystrixCommand4Collapser(1).queue();
+            Future<String> f2 = new HystrixCommand4Collapser(2).queue();
+            Future<String> f3 = new HystrixCommand4Collapser(3).queue();
+            TimeUnit.MILLISECONDS.sleep(10);
+            Future<String> f4 = new HystrixCommand4Collapser(4).queue();
+
+            System.out.println(System.currentTimeMillis() + " >>> " + f1.get());
+            System.out.println(System.currentTimeMillis() + " >>> " + f2.get());
+            System.out.println(System.currentTimeMillis() + " >>> " + f3.get());
+            System.out.println(System.currentTimeMillis() + " >>> " + f4.get());
+            // 下面3条都不在一个批量请求中
+            System.out.println(new HystrixCommand4Collapser(5).execute());
+            System.out.println(new HystrixCommand4Collapser(6).queue().get());
+            System.out.println(new HystrixCommand4Collapser(7).queue().get());
+        } finally {
+            context.shutdown();
         }
     }
+//    }
 }

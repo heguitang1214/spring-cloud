@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Hystrix Fallback 降级
  *
- * @author : Five-云析学院
+ * @author : Tang
  * @since : 2019年04月13日 14:42
  */
 public class HystrixCommand4Fallback extends HystrixCommand<String> {
@@ -37,9 +37,10 @@ public class HystrixCommand4Fallback extends HystrixCommand<String> {
     @Override
     protected String run() throws Exception {
         //1.无限循环,默认1秒钟超时。
-//        while(true){}
+//        while (true) {
+//        }
         //2.运行时异常
-//        int i=1/0;
+//        int i = 1 / 0;
 //        return name;
         //3.throw 异常
 //        throw new Exception("xyz");
@@ -47,16 +48,20 @@ public class HystrixCommand4Fallback extends HystrixCommand<String> {
         throw new HystrixBadRequestException("xtz");
     }
 
-    public static class UnitTest {
-        @Test
-        public void testHystrixCommand4Fallback() {
-            System.out.println("--");
-            new HystrixCommand4Fallback("Thread Fallback").queue();
-            try {
-                TimeUnit.SECONDS.sleep(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    public static void main(String[] args) {
+        testHystrixCommand4Fallback();
+    }
+
+    //    public static class UnitTest {
+//        @Test
+    private static void testHystrixCommand4Fallback() {
+        System.out.println("--");
+        new HystrixCommand4Fallback("Thread Fallback").queue();
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
+//    }
 }
