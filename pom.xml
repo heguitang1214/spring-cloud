@@ -61,11 +61,11 @@
         <module>eureka</module>
         <module>hystrix</module>
         <module>ribbon</module>
-        <module>feng</module>
         <module>consumer</module>
         <module>provider</module>
         <module>gateway-zuul</module>
-        <module>feng-order</module>
+        <module>feign-order</module>
+        <module>consul</module>
     </modules>
 
     <build>
