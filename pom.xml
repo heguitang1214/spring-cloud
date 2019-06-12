@@ -65,7 +65,6 @@
         <module>provider</module>
         <module>gateway-zuul</module>
         <module>feign-order</module>
-        <module>consul</module>
     </modules>
 
     <build>
