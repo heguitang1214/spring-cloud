@@ -12,8 +12,8 @@
     <artifactId>consumer</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>order-consumer</module>
-        <module>user-consumer</module>
+        <module>consumer-order</module>
+        <module>consumer-user</module>
     </modules>
 
 
