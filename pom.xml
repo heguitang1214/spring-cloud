@@ -65,6 +65,7 @@
         <module>provider</module>
         <module>gateway-zuul</module>
         <module>feign-order</module>
+        <module>stream-kafka</module>
     </modules>
 
     <build>

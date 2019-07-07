@@ -2,7 +2,7 @@
 * 搭建SpringCloud各组件使用的demo
 
 ## 端口设置
-* 配置中心config server：11000
+* 配置中心config server：9090
     > 服务端的访问：http://localhost:9090/yunxi-dev.properties
     > 客户端的测试访问：http://localhost:8080//getName
 * 注册中心eureka：8761
@@ -46,3 +46,7 @@
     
     > 刷新配置中心
         curl -X POST 192.168.0.104:9090/bus/refresh
+
+* stream：9900
+    > source：http://localhost:9900/source/sendMessage
+    > channel：http://localhost:9900/channel/sendMessage
