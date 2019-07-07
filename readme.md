@@ -16,6 +16,8 @@
     
     > feng-order: 8950
     
+    > user-bus：8960
+    
 * 服务的提供者provider：
     > product: 8900
     > http://localhost:8900/updateProduct/abc/100
@@ -36,4 +38,11 @@
     > 需要修改服务的消费者，消费者调用对应的接口即可
     示例：http://localhost:8950/fengOrder/abc/100
 
-
+* 消息总线bus
+    > user-bus：8960 自动创建topic
+    示例：http://localhost:8960/consumer/user/bus/hello
+    bus消息通知刷新配置(通过消息通道，重新获取配置)：Linux服务器上执行
+    curl -X POST 192.168.0.104:8960/bus/refresh 或者 curl -X POST 192.168.56.1:8960/bus/refresh
+    
+    > 刷新配置中心
+        curl -X POST 192.168.0.104:9090/bus/refresh
