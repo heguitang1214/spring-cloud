@@ -1,4 +1,4 @@
-package com.tang.stream;
+package com.tang.stream.sink;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;

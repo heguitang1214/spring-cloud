@@ -1,6 +1,5 @@
-package com.tang.stream.source;
+package com.tang.stream.aggregate.source;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
@@ -13,11 +12,10 @@ import java.time.format.DateTimeFormatter;
 @EnableBinding(Source.class)
 public class SourceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SourceApplication.class, args);
-    }
-
-
+    /**
+     * 消息的发送者，发送时间
+     * @return 时间
+     */
     @InboundChannelAdapter(value = Source.OUTPUT)
     public String timerMessageSource() {
         return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);

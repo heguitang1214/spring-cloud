@@ -50,3 +50,6 @@
 * stream：9900
     > source：http://localhost:9900/source/sendMessage
     > channel：http://localhost:9900/channel/sendMessage
+    > 自定义的发送接收：http://localhost:9900/processor/sendMessage?content=ok
+    > 消息分流：http://localhost:9900/shunt/sendMessage?content=bar
+    > 消息分流：http://localhost:9900/shunt/sendMessage?content=foo

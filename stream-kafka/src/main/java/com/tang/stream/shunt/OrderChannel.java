@@ -1,4 +1,4 @@
-package com.tang.stream.customize;
+package com.tang.stream.shunt;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
