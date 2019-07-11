@@ -13,6 +13,7 @@
     > http://localhost:8910/order?productName=abc&num=100
     
     > user: 8930
+    http://localhost:8930/consumer/100
     
     > feng-order: 8950
     
@@ -53,3 +54,7 @@
     > 自定义的发送接收：http://localhost:9900/processor/sendMessage?content=ok
     > 消息分流：http://localhost:9900/shunt/sendMessage?content=bar
     > 消息分流：http://localhost:9900/shunt/sendMessage?content=foo
+
+* zipkin：9400
+    > 页面监控：http://localhost:9400/zipkin/
+    

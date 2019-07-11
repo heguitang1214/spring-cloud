@@ -66,6 +66,7 @@
         <module>gateway-zuul</module>
         <module>feign-order</module>
         <module>stream-kafka</module>
+        <module>zipkin-server</module>
     </modules>
 
     <build>
