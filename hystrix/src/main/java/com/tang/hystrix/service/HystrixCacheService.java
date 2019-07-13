@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 /**
- * @author 小五老师-云析学院
  * @since 2019年5月6日 下午9:53:39
  */
 @Component

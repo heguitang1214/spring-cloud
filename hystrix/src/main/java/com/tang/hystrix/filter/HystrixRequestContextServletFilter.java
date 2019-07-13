@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
- * @author 小五老师-云析学院
  * @since 2019年5月6日 下午9:30:49
  */
 @WebFilter(urlPatterns = "/*", asyncSupported = true)

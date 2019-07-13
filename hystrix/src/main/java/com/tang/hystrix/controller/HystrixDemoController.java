@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * Hystrix @HystrixCommand
  *
- * @author : Five-云析学院
  * @since : 2019年04月15日 20:55
  */
 @RestController
