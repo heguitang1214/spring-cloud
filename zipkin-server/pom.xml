@@ -39,22 +39,22 @@
             <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
 
-        <!--此为新版本用法
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-autoconfigure-collector-kafka</artifactId>
-            <version>2.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-autoconfigure-storage-mysql</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.47</version>
-        </dependency>-->
+        <!--此为新版本用法 mq + kafka；mq + kafka + mysql-->
+        <!--<dependency>-->
+            <!--<groupId>io.zipkin.java</groupId>-->
+            <!--<artifactId>zipkin-autoconfigure-collector-kafka</artifactId>-->
+            <!--<version>2.6.1</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash;数据保存到mysql中&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>io.zipkin.java</groupId>-->
+            <!--<artifactId>zipkin-autoconfigure-storage-mysql</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>5.1.47</version>-->
+        <!--</dependency>-->
 
 
     </dependencies>

@@ -24,7 +24,8 @@
     > http://localhost:8900/updateProduct/abc/100
     > http://localhost:8900/updateProduct?productName=abc&num=100
     
-    >user: 8920
+    > user: 8920
+    > http://localhost:8920/provider/100
     
 * 熔断器Hystrix：9900
     > 
