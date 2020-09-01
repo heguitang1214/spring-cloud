@@ -33,10 +33,10 @@ public class HystrixDemoController {
                     @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"),
                     @HystrixProperty(name = "execution.timeout.enabled", value = "true"),
                     @HystrixProperty(name = "execution.isolation.strategy", value = "THREAD")
+            },
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "15")
             }
-            , threadPoolProperties = {
-            @HystrixProperty(name = "coreSize", value = "15")
-    }
     )
     public String testThread() {
         try {
