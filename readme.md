@@ -1,5 +1,5 @@
 # Spring Cloud Demo
-* 搭建SpringCloud各组件使用的demo
+* 搭建SpringCloud各组件使用的demo，学习使用SpringCloud微服务
 
 ## 端口设置
 * 配置中心config server：9090
